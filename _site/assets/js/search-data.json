@@ -2,289 +2,289 @@
     "doc": "Beats",
     "title": "Heading 1",
     "content": " ",
-    "url": "https://raketbizdev.github.io/elk/beats/#heading-1",
+    "url": "https://raketbizdev.github.io/beats/#heading-1",
     "relUrl": "/beats/#heading-1"
   },"1": {
     "doc": "Beats",
     "title": "Beats",
     "content": " ",
-    "url": "https://raketbizdev.github.io/elk/beats/",
+    "url": "https://raketbizdev.github.io/beats/",
     "relUrl": "/beats/"
   },"2": {
     "doc": "Elasticsearch",
     "title": "Installing Elasticsearch in On-Premise RHEL",
     "content": " ",
-    "url": "https://raketbizdev.github.io/elk/elasticsearch/#installing-elasticsearch-in-on-premise-rhel",
+    "url": "https://raketbizdev.github.io/elasticsearch/#installing-elasticsearch-in-on-premise-rhel",
     "relUrl": "/elasticsearch/#installing-elasticsearch-in-on-premise-rhel"
   },"3": {
     "doc": "Elasticsearch",
     "title": "Prerequisite",
     "content": ". | vim or nano | Netcat or Telnet (for testing) | ssh access | jumphost access | vpn access token | . ",
-    "url": "https://raketbizdev.github.io/elk/elasticsearch/#prerequisite",
+    "url": "https://raketbizdev.github.io/elasticsearch/#prerequisite",
     "relUrl": "/elasticsearch/#prerequisite"
   },"4": {
     "doc": "Elasticsearch",
     "title": "Port open",
     "content": ". | 22 | 9200 | 9300 | . ",
-    "url": "https://raketbizdev.github.io/elk/elasticsearch/#port-open",
+    "url": "https://raketbizdev.github.io/elasticsearch/#port-open",
     "relUrl": "/elasticsearch/#port-open"
   },"5": {
     "doc": "Elasticsearch",
     "title": "Instruction",
     "content": ". | Download elasticsearch RPM package. If youre using jumphost download the rpm package then upload to the jumphost server. wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.0.0-x86_64.rpm wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.0.0-x86_64.rpm.sha512 . | After download verify by running command below. shasum -a 512 -c elasticsearch-8.0.0-x86_64.rpm.sha512 . | Install elasticsearch. sudo rpm --install elasticsearch-8.0.0-x86_64.rpm . | Run the following command to installed to start elasticsearch. sudo systemctl daemon-reload sudo systemctl enable elasticsearch sudo system start elasticsearch . | Once elasticsearch started test the elasticsearch if working correctly. curl -XGET \"localhost:9200\" . output should be something like this. { \"name\" : \"User.local\", \"cluster_name\" : \"elasticsearch_admin\", \"cluster_uuid\" : \"sI5IbibXSxOLLgQnj_Qx2w\", \"version\" : { \"number\" : \"8.0.0\", \"build_flavor\" : \"default\", \"build_type\" : \"tar\", \"build_hash\" : \"6fc81662312141fe7691d7c1c91b8658ac17aa0d\", \"build_date\" : \"2021-12-02T15:46:35.697268109Z\", \"build_snapshot\" : false, \"lucene_version\" : \"8.10.1\", \"minimum_wire_compatibility_version\" : \"6.8.0\", \"minimum_index_compatibility_version\" : \"6.0.0-beta1\" }, \"tagline\" : \"You Know, for Search\" } . Also check the browser if its accessible. If not make sure port 9200 is open. | . ",
-    "url": "https://raketbizdev.github.io/elk/elasticsearch/#instruction",
+    "url": "https://raketbizdev.github.io/elasticsearch/#instruction",
     "relUrl": "/elasticsearch/#instruction"
   },"6": {
     "doc": "Elasticsearch",
     "title": "How to Setup elasticsearch after installation",
     "content": ". | Goto elasticsearch directory cd /etc/elasticsearch . | Open elasticsearch.yml file. vi elasticsearch.yml . | Uncomment the following settings inside elasticsearch.yml. #http.port: 9200 #cluster.name: my-application #node.name: node-1 #network.host: 192.168.0.1 #discovery.seed_hosts: [\"host1\", \"host2\"] #cluster.initial_master_nodes: [\"node-1\", \"node-2\"] . | Uncomment the cluster.name if you have multiple nodes there is only on cluster. | Uncomment the network.host and change the value to [_local_, _site_] | Uncomment the node.name Node name is the name of your current node. | Uncomment the discovery.seed_hosts Add the mainIP you use for the cluster. | Uncomment the cluster.initial_master_nodes then add the value of your node.name and every node in the cluster | . ",
-    "url": "https://raketbizdev.github.io/elk/elasticsearch/#how-to-setup-elasticsearch-after-installation",
+    "url": "https://raketbizdev.github.io/elasticsearch/#how-to-setup-elasticsearch-after-installation",
     "relUrl": "/elasticsearch/#how-to-setup-elasticsearch-after-installation"
   },"7": {
     "doc": "Elasticsearch",
     "title": "Set the Security Settings",
     "content": ". | Add the following setting at the bottom of elasticsearch.yml . # ---------------------------------- Security ----------------------------------- # xpack.security.enabled: true xpack.security.transport.ssl.enabled: true . | Restart the elasticsearch . sudo systemctl restart elasticsearch . | Run the command below. sudo /usr/share/elasticsearch/bin/elasticsearch-setup-passwords auto . output should be something like below. Copy and save it somewhere safe as you need this when you want to connect to Kibana. Changed password for user apm_system PASSWORD apm_system = ZuqOHaAD2VFIufhu6Cs0 Changed password for user kibana_system PASSWORD kibana_system = DEq9IOwqammi4PTFdVKB Changed password for user kibana PASSWORD kibana = DEq9IOwqammi4PTFdVKB Changed password for user logstash_system PASSWORD logstash_system = Aiqh4d1lVSU3mMq2iesj Changed password for user beats_system PASSWORD beats_system = UcMtL27OuXThWQqvt4M7 Changed password for user remote_monitoring_user PASSWORD remote_monitoring_user = M7HuB1qkYOBzi4W1ECjH Changed password for user elastic PASSWORD elastic = MUXNVnepRoMSq1qU66ke . | Then retest again with slightly different approach. curl -XGET \"your.ip.addr.ss:9200\" -u username:password . where username us the elastic and password is the password of elastic . | . ",
-    "url": "https://raketbizdev.github.io/elk/elasticsearch/#set-the-security-settings",
+    "url": "https://raketbizdev.github.io/elasticsearch/#set-the-security-settings",
     "relUrl": "/elasticsearch/#set-the-security-settings"
   },"8": {
     "doc": "Elasticsearch",
     "title": "Elasticsearch",
     "content": " ",
-    "url": "https://raketbizdev.github.io/elk/elasticsearch/",
+    "url": "https://raketbizdev.github.io/elasticsearch/",
     "relUrl": "/elasticsearch/"
   },"9": {
     "doc": "Filebeat",
     "title": "Filebeat Installations in RHEL environment",
     "content": ". | Download filebeat tar package . wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.0.0-x86_64.rpm . | Install the filebeat . rpm --install filebeat-8.0.0-x86_64.rpm . After install start the filebeat. sudo systemctl daemon-reload sudo systemctl enable filebeat sudo systemctl start filebeat . | Test the Filebeat . sudo systemctl status filebeat . Output is something like this. | . ",
-    "url": "https://raketbizdev.github.io/elk/beats/#filebeat-installations-in-rhel-environment",
+    "url": "https://raketbizdev.github.io/beats/#filebeat-installations-in-rhel-environment",
     "relUrl": "/beats/#filebeat-installations-in-rhel-environment"
   },"10": {
     "doc": "Filebeat",
     "title": "Setup Filebeat connect to Kafka.",
     "content": ". | Modify the filebeat.yml file . cd /etc/filebeat/ . Open filebeat.yml . vi filebeat.yml . | Add kafka connection under line 204 . # ------------------------------ Kafka Output ------------------------------- output.kafka: # initial brokers for reading cluster metadata hosts: [\"your.ip.addr.ss:9092\"] topic: \"filebeat-54-173-199-118\" # message topic selection + partition codec.format: string: \"%{[@timestamp]} %{[message]}\" partition.round_robin: reachable_only: false required_acks: 1 compression: gzip max_message_bytes: 1000000 . | Activate Modules depends on app you want log to collect. If an application is not part of the module disable the module directory in line 99 and add the custom path below line 74 . | Test Filebeat connectivity to kafka . filebeat test output . Output should be something like this . Kafka: 54.227.242.218:9092... parse host... OK dns lookup... OK addresses: 54.227.242.218 dial up... OK . | . ",
-    "url": "https://raketbizdev.github.io/elk/beats/#setup-filebeat-connect-to-kafka",
+    "url": "https://raketbizdev.github.io/beats/#setup-filebeat-connect-to-kafka",
     "relUrl": "/beats/#setup-filebeat-connect-to-kafka"
   },"11": {
     "doc": "Filebeat",
     "title": "Filebeat",
     "content": " ",
-    "url": "https://raketbizdev.github.io/elk/beats/",
+    "url": "https://raketbizdev.github.io/beats/",
     "relUrl": "/beats/"
   },"12": {
     "doc": "Home",
     "title": "ELK Automation V1",
     "content": " ",
-    "url": "https://raketbizdev.github.io/elk/#elk-automation-v1",
+    "url": "https://raketbizdev.github.io/#elk-automation-v1",
     "relUrl": "/#elk-automation-v1"
   },"13": {
     "doc": "Home",
     "title": "Table of Content",
     "content": ". | Elasticsearch | Logstash . | Logstash config | Logstash Kafka Config. | Logstash DB Config | Logstash Metricbeat config | . | Kibana . | Kibana Installation | Kibana Dashboard Visualization | . | Beats . | Filebeat Installation | Metricbeat Installation | Winlogbeat Installation | . | Kafka | Java | . ",
-    "url": "https://raketbizdev.github.io/elk/#table-of-content",
+    "url": "https://raketbizdev.github.io/#table-of-content",
     "relUrl": "/#table-of-content"
   },"14": {
     "doc": "Home",
     "title": "Home",
     "content": " ",
-    "url": "https://raketbizdev.github.io/elk/",
+    "url": "https://raketbizdev.github.io/",
     "relUrl": "/"
   },"15": {
     "doc": "Java",
     "title": "Installing Java in On-Premise RHEL",
     "content": "Latest Elasticsearch, Logstash and Kibana dont need Java as they have built in java package installed however Kafka need latest java version. | make sure you have port 22 access to your server. | Download the java dependency first and install . | If your server has access to the internet. yum install java-17-openjdk -y . | If you are using on-prem and use jumphost you have to download manually the java package. wget http://mirror.centos.org/centos/8-stream/AppStream/x86_64/os/Packages/java-17-openjdk-devel-17.0.1.0.12-2.el8_5.x86_64.rpm dnf install java-17-openjdk . | Once Java installed you need to test java java --version output: openjdk 17.0.2 2022-01-18 LTS OpenJDK Runtime Environment 21.9 (build 17.0.2+8-LTS) OpenJDK 64-Bit Server VM 21.9 (build 17.0.2+8-LTS, mixed mode, sharing) . | . | . ",
-    "url": "https://raketbizdev.github.io/elk/java/#installing-java-in-on-premise-rhel",
+    "url": "https://raketbizdev.github.io/java/#installing-java-in-on-premise-rhel",
     "relUrl": "/java/#installing-java-in-on-premise-rhel"
   },"16": {
     "doc": "Java",
     "title": "Java",
     "content": " ",
-    "url": "https://raketbizdev.github.io/elk/java/",
+    "url": "https://raketbizdev.github.io/java/",
     "relUrl": "/java/"
   },"17": {
     "doc": "Kafka",
     "title": "Kafka Installation in On-Premise RHEL",
     "content": " ",
-    "url": "https://raketbizdev.github.io/elk/kafka/#kafka-installation-in-on-premise-rhel",
+    "url": "https://raketbizdev.github.io/kafka/#kafka-installation-in-on-premise-rhel",
     "relUrl": "/kafka/#kafka-installation-in-on-premise-rhel"
   },"18": {
     "doc": "Kafka",
     "title": "Prerequisite",
     "content": ". | vim or nano | Netcat or Telnet (for testing) | ssh access | jumphost access | tar | vpn access token | Java | . ",
-    "url": "https://raketbizdev.github.io/elk/kafka/#prerequisite",
+    "url": "https://raketbizdev.github.io/kafka/#prerequisite",
     "relUrl": "/kafka/#prerequisite"
   },"19": {
     "doc": "Kafka",
     "title": "Port open",
     "content": ". | 22 | 9092 | 9093 | . ",
-    "url": "https://raketbizdev.github.io/elk/kafka/#port-open",
+    "url": "https://raketbizdev.github.io/kafka/#port-open",
     "relUrl": "/kafka/#port-open"
   },"20": {
     "doc": "Kafka",
     "title": "Instruction",
     "content": "Before you install Kafka you need to install java. To check if java is installed run this command . java --version . | Download kafka tar package. If youre using jumphost download the rpm package then upload to the jumphost server. wget https://dlcdn.apache.org/kafka/3.1.0/kafka_2.13-3.1.0.tgz wget https://downloads.apache.org/kafka/3.1.0/kafka_2.12-3.1.0.tgz.sha512 . | After download verify by running command below. shasum -a 512 kafka_2.12-3.1.0.tgz.sha512 . | Before unpacking kafka package make sure the file is in the /opt directory. mv kafka_2.13-3.1.0.tgz /opt . | Unpack kafka using tarball. sudo tar -xvf kafka_2.13-3.1.0.tgz . | Create symlink . ln -s /opt/kafka_2.13-3.1.0 /opt/kafka . | Create kafka user and change kafka permission. sudo useradd kafka sudo chown -R kafka:kafka /opt/kafka* . | Create a kafka service . touch /etc/systemd/system/kafka.service . Open the kafka service created from above . vi /etc/systemd/system/kafka.service . Then Add the code below to kafka.service file. [Unit] Description=Apache Kafka Requires=zookeeper.service After=zookeeper.service [Service] Type=simple User=kafka Group=kafka ExecStart=/opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties ExecStop=/opt/kafka/bin/kafka-server-stop.sh [Install] WantedBy=multi-user.target . | Create a zookeeper service . touch /etc/systemd/system/zookeeper.service . Open the zookeeper.service created from above . vi /etc/systemd/system/zookeeper.service . Then Add the code below to zookeeper.service file. [Unit] Description=zookeeper After=syslog.target network.target [Service] Type=simple User=kafka Group=kafka ExecStart=/opt/kafka/bin/zookeeper-server-start.sh /opt/kafka/config/zookeeper.properties ExecStop=/opt/kafka/bin/zookeeper-server-stop.sh [Install] WantedBy=multi-user.target . | After everything is put in place time to run the kafka and zookeeper systemctl daemon-reload systemctl enable zookeeper systemctl enable kafka systemctl start zookeeper systemctl stop kafka systemctl start kafka . | Once kafka started test the kafka if working correctly. sudo systemctl status kafka . Output should be something like this. | Test also if Zookeeper is working . sudo systemctl status zookeeper . Output should be something like this. | . ",
-    "url": "https://raketbizdev.github.io/elk/kafka/#instruction",
+    "url": "https://raketbizdev.github.io/kafka/#instruction",
     "relUrl": "/kafka/#instruction"
   },"21": {
     "doc": "Kafka",
     "title": "Creating your first topic",
     "content": ". | Create your first topic . /opt/kafka/bin/kafka-topics.sh --create --partitions 1 --replication-factor 1 --topic test-events --bootstrap-server localhost:9092 . | listing topic . /opt/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --list . | Run the producer topic . /opt/kafka/bin/kafka-console-producer.sh --topic test-events --bootstrap-server localhost:9092 . | To test the message you have to run the consumer . /opt/kafka/bin/kafka-console-consumer.sh --topic test-events --from-beginning --bootstrap-server localhost:9092 . | . ",
-    "url": "https://raketbizdev.github.io/elk/kafka/#creating-your-first-topic",
+    "url": "https://raketbizdev.github.io/kafka/#creating-your-first-topic",
     "relUrl": "/kafka/#creating-your-first-topic"
   },"22": {
     "doc": "Kafka",
     "title": "Sent Data or push data from Kafka to Logstash",
     "content": "Now that you have the topics created and running. Time for us to send this data to logstash to elasticsearch to kibana. But before that you need to check if the kafka port is accessible form logstash server. Test connectivity using netcat. nc -zv your.ip.addr.ss 9092 . | Open server.properties in the /opt directory . If you are using kafka cluster . vi /opt/kafka/config/server.properties `` If you are using stand-alone kafka . vi /opt/kafka/config/connect-standalone.properties `` . | Add IP address server properties . If you are using kafka cluster . From: 31 #listeners=PLAINTEXT://localhost:9092 36 #advertised.listeners=PLAINTEXT://localhost:9092 40 #listener.security.protocol.map=PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL #bootstrap.servers=localhost:9092 To: 31 #listeners=PLAINTEXT://your.ip.addr.ss:9092 36 #advertised.listeners=PLAINTEXT://your.ip.addr.ss:9092 40 #listener.security.protocol.map=PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL . If you are using stand-alone kafka . From: #bootstrap.servers=localhost:9092 To: bootstrap.servers=your.ip.addr.ss:9092 . | . ",
-    "url": "https://raketbizdev.github.io/elk/kafka/#sent-data-or-push-data-from-kafka-to-logstash",
+    "url": "https://raketbizdev.github.io/kafka/#sent-data-or-push-data-from-kafka-to-logstash",
     "relUrl": "/kafka/#sent-data-or-push-data-from-kafka-to-logstash"
   },"23": {
     "doc": "Kafka",
     "title": "Connect Kafka to Logstash",
     "content": ". | First Create a topic | Go to Logstash server and create config files. | Under input add the kakfka settings . input { kafka{ codec =&gt; json bootstrap_servers =&gt; \"kaf.ka.ip.add:9092\" topics =&gt; [\"pjl-prosperna-log\"] } } output { stdout { codec =&gt; rubydebug } } . | Run the logstash command to test . /usr/share/logstash/bin/logstash -f your-logstash.conf . | Go back to Kafka server and run the Kafka event. /opt/kafka/bin/kafka-console-producer.sh --topic test-events --bootstrap-server localhost:9092 . | Start typing any text and check logstash for the results. | . ",
-    "url": "https://raketbizdev.github.io/elk/kafka/#connect-kafka-to-logstash",
+    "url": "https://raketbizdev.github.io/kafka/#connect-kafka-to-logstash",
     "relUrl": "/kafka/#connect-kafka-to-logstash"
   },"24": {
     "doc": "Kafka",
     "title": "Kafka",
     "content": " ",
-    "url": "https://raketbizdev.github.io/elk/kafka/",
+    "url": "https://raketbizdev.github.io/kafka/",
     "relUrl": "/kafka/"
   },"25": {
     "doc": "Kibana",
     "title": "Kibana",
     "content": " ",
-    "url": "https://raketbizdev.github.io/elk/kibana/",
+    "url": "https://raketbizdev.github.io/kibana/",
     "relUrl": "/kibana/"
   },"26": {
     "doc": "Kibana Dashboard Visualization",
     "title": "Kibana Dashboard Visualization",
     "content": " ",
-    "url": "https://raketbizdev.github.io/elk/kibana/dashboard",
+    "url": "https://raketbizdev.github.io/kibana/dashboard",
     "relUrl": "/kibana/dashboard"
   },"27": {
     "doc": "Kibana Installation",
     "title": "Kibana Installation in On-Premise RHEL",
     "content": " ",
-    "url": "https://raketbizdev.github.io/elk/kibana/#kibana-installation-in-on-premise-rhel",
+    "url": "https://raketbizdev.github.io/kibana/#kibana-installation-in-on-premise-rhel",
     "relUrl": "/kibana/#kibana-installation-in-on-premise-rhel"
   },"28": {
     "doc": "Kibana Installation",
     "title": "Prerequisite",
     "content": ". | vim or nano | Netcat or Telnet (for testing) | ssh access | jumphost access | vpn access token | nginx | . ",
-    "url": "https://raketbizdev.github.io/elk/kibana/#prerequisite",
+    "url": "https://raketbizdev.github.io/kibana/#prerequisite",
     "relUrl": "/kibana/#prerequisite"
   },"29": {
     "doc": "Kibana Installation",
     "title": "Port open",
     "content": ". | 22 | 80 | 5601 | . ",
-    "url": "https://raketbizdev.github.io/elk/kibana/#port-open",
+    "url": "https://raketbizdev.github.io/kibana/#port-open",
     "relUrl": "/kibana/#port-open"
   },"30": {
     "doc": "Kibana Installation",
     "title": "Instruction",
     "content": ". | Download Kibana RPM package. If youre using jumphost download the rpm package then upload to the jumphost server. wget https://artifacts.elastic.co/downloads/kibana/kibana-8.0.0-x86_64.rpm . | After download verify by running command below. shasum -a 512 kibana-8.0.0-x86_64.rpm . | Install Kibana. sudo rpm --install kibana-8.0.0-x86_64.rpm . | Run the following command to installed to start Kibana. sudo systemctl daemon-reload sudo systemctl enable Kibana sudo system start Kibana . | Once Kibana started test the Kibana if working correctly. sudo systemctl status kibana . Output should be something like this. | . ",
-    "url": "https://raketbizdev.github.io/elk/kibana/#instruction",
+    "url": "https://raketbizdev.github.io/kibana/#instruction",
     "relUrl": "/kibana/#instruction"
   },"31": {
     "doc": "Kibana Installation",
     "title": "Install Nginx so Kibana can be viewed in the browser",
     "content": "Make sure your’e in the root directory before downloading . sudo su . | Download Nginx RPM package. If your’e using jump host download the rpm package then upload to the jump host server. wget https://nginx.org/packages/rhel/7/x86_64/RPMS/nginx-module-njs-1.20.2%2B0.7.2-1.el7.ngx.x86_64.rpm . | Install Nginx . sudo rpm --install nginx-module-njs-1.20.2%2B0.7.2-1.el7.ngx.x86_64.rpm . | After installation setup the nginx config . cd /etc/nginx/conf.d . Create config file . touch kibana.conf . paste the command settings below . server { listen 80; server_name your.ip.addr.ss; location / { proxy_pass http://localhost:5601; proxy_http_version 1.1; proxy_set_header Upgrade \\$http_upgrade; proxy_set_header Connection 'upgrade'; proxy_set_header Host \\$host; proxy_cache_bypass \\$http_upgrade; } } . | After the setup test the nginx if work correctly . sudo nginx -t sudo systemctl start nginx . Then check the nginx status by running the command below . sudo systemctl status nginx . Output should be something like this . | . ",
-    "url": "https://raketbizdev.github.io/elk/kibana/#install-nginx-so-kibana-can-be-viewed-in-the-browser",
+    "url": "https://raketbizdev.github.io/kibana/#install-nginx-so-kibana-can-be-viewed-in-the-browser",
     "relUrl": "/kibana/#install-nginx-so-kibana-can-be-viewed-in-the-browser"
   },"32": {
     "doc": "Kibana Installation",
     "title": "Setting up Kibana",
     "content": "Before setting up kibana to be accessible by browser make sure that you test if port 9200 is open and the elasticsearch server is accessible by testing connectivity using netcat or telnet. Testing using netcat . nc -zv your.ip.addr.ss 9200 . The Output should be something like this . Ncat: Version 7.70 ( https://nmap.org/ncat ) Ncat: Connected to your.ip.addr.ss:9200. Ncat: 0 bytes sent, 0 bytes received in 0.01 seconds. If theres no error proceed to setup the kibana.yml file . | Open kibana.yml file kibana file is located at the /etc/kibana directory. vi /etc/kibana/kibana.yml . | Change or uncomment the following code . #server.port: 5601 #server.host: \"localhost\" #server.basePath: \"\" #elasticsearch.hosts: [\"host\"] #server.name: \"acn-elk\" #elasticsearch.username: \"kibana\" #elasticsearch.password: \"change-me\" . Uncomment server.port in line 2 keep the port 5601 . server.port: 5601 . Uncomment and modify the server.host in line 7. From\" #server.host: \"localhost\" To: server.host: \"your.ip.addr.ss\" . Uncomment server.basePath in line 13 and add the dns or ip with the http protocol . From: #server.basePath: \"\" To: server.basePath: \"http://your.ip.addr.ss\" . Uncomment #server.name and add the server name in line 29. From: #server.name: \"your-hostname\" To: server.name: \"your-new-hostname\" . Connect the elasticsearch server to kibana in line 32 . From: #elasticsearch.hosts: [\"host\"] To: elasticsearch.hosts: [\"your.ip.addr.ss\"] #If you are operating in a elasticsearch cluster add all the Ip addresses in the hosts. Then also change the elasticsearch.username and elasticsearch.password in lin3 45 and 46 from the username and password generated from elasticsearch see Elasticsearch settings . #elasticsearch.username: \"elastic\" #elasticsearch.password: \"change-me\" . | After the kibana setup restart kibana and check status if its working. sudo systemctl restart kibana . | Test kibana if viewable in the terminal. http://your.ip.addr.ss . Output should be similar to this . | Then enter the the elasticsearch username and password provide you save from setting up elasticsearch. | . ",
-    "url": "https://raketbizdev.github.io/elk/kibana/#setting-up-kibana",
+    "url": "https://raketbizdev.github.io/kibana/#setting-up-kibana",
     "relUrl": "/kibana/#setting-up-kibana"
   },"33": {
     "doc": "Kibana Installation",
     "title": "Kibana Installation",
     "content": " ",
-    "url": "https://raketbizdev.github.io/elk/kibana/",
+    "url": "https://raketbizdev.github.io/kibana/",
     "relUrl": "/kibana/"
   },"34": {
     "doc": "Logstash",
     "title": "Logstash",
     "content": " ",
-    "url": "https://raketbizdev.github.io/elk/logstash/",
+    "url": "https://raketbizdev.github.io/logstash/",
     "relUrl": "/logstash/"
   },"35": {
     "doc": "Logstash Config",
     "title": "Logstash Config",
     "content": " ",
-    "url": "https://raketbizdev.github.io/elk/logstash/config/",
+    "url": "https://raketbizdev.github.io/logstash/config/",
     "relUrl": "/logstash/config/"
   },"36": {
     "doc": "Logstash Installation",
     "title": "Logstash Installation in On-Premise RHEL",
     "content": " ",
-    "url": "https://raketbizdev.github.io/elk/logstash/#logstash-installation-in-on-premise-rhel",
+    "url": "https://raketbizdev.github.io/logstash/#logstash-installation-in-on-premise-rhel",
     "relUrl": "/logstash/#logstash-installation-in-on-premise-rhel"
   },"37": {
     "doc": "Logstash Installation",
     "title": "Prerequisite",
     "content": ". | vim or nano | Netcat or Telnet (for testing) | ssh access | jumphost access | vpn access token | . ",
-    "url": "https://raketbizdev.github.io/elk/logstash/#prerequisite",
+    "url": "https://raketbizdev.github.io/logstash/#prerequisite",
     "relUrl": "/logstash/#prerequisite"
   },"38": {
     "doc": "Logstash Installation",
     "title": "Port open",
     "content": ". | 22 | 5044 | 9200 | 9092 | . ",
-    "url": "https://raketbizdev.github.io/elk/logstash/#port-open",
+    "url": "https://raketbizdev.github.io/logstash/#port-open",
     "relUrl": "/logstash/#port-open"
   },"39": {
     "doc": "Logstash Installation",
     "title": "Instruction",
     "content": ". | Download logstash RPM package. If youre using jumphost download the rpm package then upload to the jumphost server. wget https://artifacts.elastic.co/downloads/logstash/logstash-8.0.0-x86_64.rpm . | After download verify by running command below. shasum -a 512 logstash-8.0.0-x86_64.rpm . | Install logstash. sudo rpm --install logstash-8.0.0-x86_64.rpm . | Run the following command to installed to start logstash. sudo systemctl daemon-reload sudo systemctl enable logstash sudo system start logstash . | Once logstash started test the logstash if working correctly. sudo systemctl status logstash . Output should be something like this. | . ",
-    "url": "https://raketbizdev.github.io/elk/logstash/#instruction",
+    "url": "https://raketbizdev.github.io/logstash/#instruction",
     "relUrl": "/logstash/#instruction"
   },"40": {
     "doc": "Logstash Installation",
     "title": "Connect Logstash to Elasticsearch and View Kibana Dashboard.",
     "content": ". | Go to the conf.d directory inside logstash . cd /etc/logstash/conf.d . Create a test file logstash-sample.conf . touch logstash-sample.conf . Add this sample file . input { stdin { } } output { stdout { codec =&gt; rubydebug } } . After creating test config run following command . /usr/share/logstash/bin/logstash -f logstash-sample.conf . Output should be something the image below check the highlight in blue and the last line of the logs says pipeline is running. At the bottom of the logs type anything there will be an output similar to the image below. | To connect to Logstash to Elasticsearch check the elasticsearch if accessible using netcat or telnet command then modify the logstash-sample.conf output . output { elasticsearch { hosts =&gt; [\"http://your.ip.addr.ss:9200\"] index =&gt; \"custom-index-name\" #user =&gt; \"elastic\" #password =&gt; \"change-me\" } } . Run the command again to test again. /usr/share/logstash/bin/logstash -f logstash-sample.conf . Then Check kibana dashboard by going to Stack Management Dasboard then click the Index management under Data. Create index pattern under kibana nav . After creating index patter visit analytics and then click Discover. If everything is working according to the plan your ready to create a visualization dashboard. | . ",
-    "url": "https://raketbizdev.github.io/elk/logstash/#connect-logstash-to-elasticsearch-and-view-kibana-dashboard",
+    "url": "https://raketbizdev.github.io/logstash/#connect-logstash-to-elasticsearch-and-view-kibana-dashboard",
     "relUrl": "/logstash/#connect-logstash-to-elasticsearch-and-view-kibana-dashboard"
   },"41": {
     "doc": "Logstash Installation",
     "title": "Logstash Installation",
     "content": " ",
-    "url": "https://raketbizdev.github.io/elk/logstash/",
+    "url": "https://raketbizdev.github.io/logstash/",
     "relUrl": "/logstash/"
   },"42": {
     "doc": "Metricbeat",
     "title": "Metricbeat Installations in RHEL environment",
     "content": ". | Download metricbeat tar package . wget https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-8.0.0-x86_64.rpm . | Install the metricbeat . rpm --install metricbeat-8.0.0-x86_64.rpm . After install start the metricbeat. sudo systemctl daemon-reload sudo systemctl enable metricbeat sudo systemctl start metricbeat . | Test the metricbeat . sudo systemctl status metricbeat . Output is something like this. | . ",
-    "url": "https://raketbizdev.github.io/elk/beats/metricbeat#metricbeat-installations-in-rhel-environment",
+    "url": "https://raketbizdev.github.io/beats/metricbeat#metricbeat-installations-in-rhel-environment",
     "relUrl": "/beats/metricbeat#metricbeat-installations-in-rhel-environment"
   },"43": {
     "doc": "Metricbeat",
     "title": "Setup metricbeat connect to Kafka.",
     "content": ". | Modify the metricbeat.yml file . cd /etc/metricbeat/ . Open metricbeat.yml . vi metricbeat.yml . | Add kafka connection under line 204 . # ------------------------------ Kafka Output ------------------------------- output.kafka: # initial brokers for reading cluster metadata hosts: [\"your.ip.addr.ss:9092\"] topic: \"metricbeat-54-173-199-118\" # message topic selection + partition codec.format: string: \"%{[@timestamp]} %{[message]}\" partition.round_robin: reachable_only: false required_acks: 1 compression: gzip max_message_bytes: 1000000 . | Activate Modules depends on app you want log to collect. If an application is not part of the module disable the module directory in line 99 and add the custom path below line 74 . | . ",
-    "url": "https://raketbizdev.github.io/elk/beats/metricbeat#setup-metricbeat-connect-to-kafka",
+    "url": "https://raketbizdev.github.io/beats/metricbeat#setup-metricbeat-connect-to-kafka",
     "relUrl": "/beats/metricbeat#setup-metricbeat-connect-to-kafka"
   },"44": {
     "doc": "Metricbeat",
     "title": "Metricbeat",
     "content": " ",
-    "url": "https://raketbizdev.github.io/elk/beats/metricbeat",
+    "url": "https://raketbizdev.github.io/beats/metricbeat",
     "relUrl": "/beats/metricbeat"
   },"45": {
     "doc": "Winlogbeat",
     "title": "Winlogbeat Installations in Windows Server",
     "content": ". | Download filebeat tar package . wget https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.0.0-x86_64.rpm . | Install the filebeat . rpm --install filebeat-8.0.0-x86_64.rpm . After install start the filebeat. winlogbeat.exe -c winlogbeat.yml . | Test the Filebeat . sudo systemctl status filebeat . Output is something like this. | . ",
-    "url": "https://raketbizdev.github.io/elk/beats/winlogbeat#winlogbeat-installations-in-windows-server",
+    "url": "https://raketbizdev.github.io/beats/winlogbeat#winlogbeat-installations-in-windows-server",
     "relUrl": "/beats/winlogbeat#winlogbeat-installations-in-windows-server"
   },"46": {
     "doc": "Winlogbeat",
     "title": "Setup Filebeat connect to Kafka.",
     "content": ". | Modify the filebeat.yml file . cd /etc/filebeat/ . Open filebeat.yml . vi filebeat.yml . | Add kafka connection under line 204 . # ------------------------------ Kafka Output ------------------------------- output.kafka: # initial brokers for reading cluster metadata hosts: [\"your.ip.addr.ss:9092\"] topic: \"filebeat-54-173-199-118\" # message topic selection + partition codec.format: string: \"%{[@timestamp]} %{[message]}\" partition.round_robin: reachable_only: false required_acks: 1 compression: gzip max_message_bytes: 1000000 . | Activate Modules depends on app you want log to collect. If an application is not part of the module disable the module directory in line 99 and add the custom path below line 74 . | . ",
-    "url": "https://raketbizdev.github.io/elk/beats/winlogbeat#setup-filebeat-connect-to-kafka",
+    "url": "https://raketbizdev.github.io/beats/winlogbeat#setup-filebeat-connect-to-kafka",
     "relUrl": "/beats/winlogbeat#setup-filebeat-connect-to-kafka"
   },"47": {
     "doc": "Winlogbeat",
     "title": "Winlogbeat",
     "content": " ",
-    "url": "https://raketbizdev.github.io/elk/beats/winlogbeat",
+    "url": "https://raketbizdev.github.io/beats/winlogbeat",
     "relUrl": "/beats/winlogbeat"
   }
 }

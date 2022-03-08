@@ -51,7 +51,7 @@ nav_order: 1
     sudo systemctl status logstash
     ```
     Output should be something like this.
-    ![logstash status](/images/logstash_status.png)
+    ![logstash status](/elk_nehr/images/logstash_status.png)
 
 ## Connect Logstash to Elasticsearch and View Kibana Dashboard.
 
@@ -88,10 +88,10 @@ nav_order: 1
     ```
 
     Output should be something the image below check the highlight in blue and the last line of the logs says pipeline is running.
-    ![Logstash Test](/images/logstash_test.png)
+    ![Logstash Test](/elk_nehr/images/logstash_test.png)
 
     At the bottom of the logs type anything there will be an output similar to the image below.
-    ![logstash_hello](/images/logstash_hello.png)
+    ![logstash_hello](/elk_nehr/images/logstash_hello.png)
 
 2. To connect to Logstash to Elasticsearch check the elasticsearch if accessible using [netcat](/kibana/#setting-up-kibana) or telnet command then modify the `logstash-sample.conf` output
 
@@ -112,12 +112,12 @@ nav_order: 1
     ```
 
     Then Check kibana dashboard by going to `Stack Management Dasboard` then click the `Index management` under `Data`.
-    ![kibana_index_management](/images/kibana_index_management.png)
+    ![kibana_index_management](/elk_nehr/images/kibana_index_management.png)
 
     Create index pattern under kibana nav
-    ![custom_index_pattern](/images/custom_index_pattern.png)
+    ![custom_index_pattern](/elk_nehr/images/custom_index_pattern.png)
 
     After creating index patter visit analytics and then click `Discover`.
-    ![kibana_discover](/images/kibana_discover.png)
+    ![kibana_discover](/elk_nehr/images/kibana_discover.png)
 
     If everything is working according to the plan your ready to create a visualization dashboard.

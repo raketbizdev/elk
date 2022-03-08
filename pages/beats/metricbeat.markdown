@@ -35,7 +35,7 @@ nav_order: 2
     sudo systemctl status metricbeat
     ```
     Output is something like this.
-    ![metricbeat status](/images/filebeat_status.png)
+    ![metricbeat status](/elk_nehr/images/filebeat_status.png)
 
 ## Setup metricbeat connect to Kafka.
 
@@ -68,7 +68,7 @@ nav_order: 2
     max_message_bytes: 1000000
     ```
 3. Activate Modules depends on app you want log to collect.
-    ![Log Modules](/images/log_modules.png)
+    ![Log Modules](/elk_nehr/images/log_modules.png)
     
     If an application is not part of the module disable the module directory in `line 99` and add the custom path below `line 74`
 

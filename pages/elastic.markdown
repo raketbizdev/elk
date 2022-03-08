@@ -70,7 +70,7 @@ nav_order: 1
         }
     ```
     Also check the browser if its accessible. If not make sure port `9200` is open.
-    ![elasticsearch](/images/elasticsearch.png)
+    ![elasticsearch](/elk_nehr/images/elasticsearch.png)
 
 ## How to Setup elasticsearch after installation
 

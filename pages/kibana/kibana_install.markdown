@@ -50,7 +50,7 @@ nav_order: 1
     sudo systemctl status kibana
     ```
     Output should be something like this.
-    ![kibana status](/images/kibana_status.png)
+    ![kibana status](/elk_nehr/images/kibana_status.png)
 
 
 ## Install Nginx so Kibana can be viewed in the browser
@@ -113,7 +113,7 @@ Make sure your'e in the `root` directory before downloading
     ```
     Output should be something like this
 
-    ![Nginx Status](/images/nginx_status.png)
+    ![Nginx Status](/elk_nehr/images/nginx_status.png)
 
 ## Setting up Kibana
 
@@ -220,6 +220,6 @@ If theres no error proceed to setup the `kibana.yml` file
     ```
 
     Output should be similar to this
-    ![Kibana Dashboard](/images/kibana.png)
+    ![Kibana Dashboard](/elk_nehr/images/kibana.png)
 
 5. Then enter the the elasticsearch username and password provide you save from setting up elasticsearch.
